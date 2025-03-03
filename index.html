@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Union Street Brotherhood - Rules</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Navbar Style */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(31, 41, 55, 0.9); /* Gray-800 with transparency */
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        /* Dropdown Animation */
+        .dropdown-content {
+            transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            overflow: hidden;
+            opacity: 0;
+            max-height: 0; /* Set initial max-height to 0 */
+        }
+
+        .dropdown-content.show {
+            opacity: 1;
+            max-height: 500px; /* Set a large enough value to accommodate content */
+            overflow-y: auto; /* Allow vertical scrolling if content exceeds max-height */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-100">
+    <div class="navbar p-4 shadow-lg">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="logousb.png" alt="USB Logo" class="w-10 h-10 mr-2 rounded-full">
+                <span class="text-white-400 text-xl font-bold">Union Street Brotherhood</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="text-white-400 hover:text-yellow-300 transition duration-300 relative">
+                    Home
+                    <span class="block h-0.5 bg-white-400 absolute left-0 -bottom-1 transition-all duration-300 scale-x-0 group-hover:scale-x-100"></span>
+                </a>
+                <a href="#high-ranks" class="text-white-400 hover:text-yellow-300 transition duration-300 relative">
+                    High Ranks
+                    <span class="block h-0.5 bg-white-400 absolute left-0 -bottom-1 transition-all duration-300 scale-x-0 group-hover:scale-x-100"></span>
+                </a>
+                <a href="#rules" class="text-white-400 hover:text-yellow-300 transition duration-300 relative">
+                    Rules
+                    <span class="block h-0.5 bg-white-400 absolute left-0 -bottom-1 transition-all duration-300 scale-x-0 group-hover:scale-x-100"></span>
+                </a>
+                <a href="#gallery" class="text-white-400 hover:text-yellow-300 transition duration-300 relative">
+                    Gallery
+                    <span class="block h-0.5 bg-white-400 absolute left-0 -bottom-1 transition-all duration-300 scale-x-0 group-hover:scale-x-100"></span>
+                </a>
+            </div>
+            <div class="md:hidden">
+                <button id="hamburger" class="text-white-400 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="md:hidden hidden bg-gray-800 p-4 fixed top-16 left-0 right-0 z-50">
+        <a href="#home" class="block text-white-400 hover:text-yellow-300 mb-2">Home</a>
+        <a href="#high-ranks" class="block text-white-400 hover:text-yellow-300 mb-2">High Ranks</a>
+        <a href="#rules" class="block text-white-400 hover:text-yellow-300 mb-2">Rules</a>
+        <a href="#gallery" class="block text-white-400 hover:text-yellow-300 mb-2">Gallery</a>
+    </div>
+
+    <div id="home" class="relative bg-cover bg-center h-screen">
+        <div class="flex flex-col items-center justify-center h-full bg-black bg-opacity-50">
+            <img src="logousb.png" alt="USB Logo" class="w-32 h-32 mb-4 border-4 border-white-500 rounded-full shadow-lg">
+            <h1 class="text-4xl font-bold text-white text-center">Union Street Brotherhood</h1>
+            <p class="text-center text-gray-300 mt-4 px-4 md:px-0 max-w-xl">Selamat datang di Union Street Brotherhood (USB). Sebagai bagian dari
+                keluarga ini, kamu harus memahami dan mematuhi aturan berikut untuk menjaga kehormatan, loyalitas, dan
+                kekuatan geng. Ingat, ini bukan sekadar kelompok, ini adalah keluarga.</p>
+        </div>
+    </div>
+
+    <style>
+        #home {
+    animation: changeBackground 15s infinite; /* Durasi total untuk satu siklus */
+}
+
+@keyframes changeBackground {
+    0% {
+        background-image: url('backgroundusb2.png');
+    }
+    33% {
+        background-image: url('backgroundusb.png');
+    }
+    66% {
+        background-image: url('backgroundusb3.png');
+    }
+    100% {
+        background-image: url('backgroundusb4.png');
+    }
+}
+    </style>
+
+    <div class="container mx-auto p-6 mt-4"> <!-- Added margin-top to avoid overlap with navbar -->
+        <!-- Daftar Petinggi USB -->
+        <section id="high-ranks" class="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
+            <h2 class="text-2xl font-bold text-white-400 text-center mb-4">🔱 USB High Ranks 🔱</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <!-- Right Hand -->
+                <div class="bg-gray-700 p-4 rounded-lg shadow-md">
+                    <img src="Paragon.png" alt="Paragon"
+                        class="w-24 h-24 mx-auto rounded-full border-4 border-yellow-500 mb-3 cursor-pointer hover:scale-110 transition duration-300"
+                        onclick="openModal(this.src)">
+                    <h3 class="text-lg font-semibold text-yellow-400">Defasa Timothy</h3>
+                    <p class="text-gray-300 text-sm">Paragon</p>
+                </div>
+                <!-- Leader -->
+                <div class="bg-gray-700 p-4 rounded-lg shadow-md">
+                    <img src="Patriarch.png" alt="Patriarch"
+                        class="w-24 h-24 mx-auto rounded-full border-4 border-red-500 mb-3 cursor-pointer hover:scale-110 transition duration-300"
+                        onclick="openModal(this.src)">
+                    <h3 class="text-lg font-semibold text-red-400">Aiden Packer</h3>
+                    <p class="text-gray-300 text-sm">Patriarch</p>
+                </div>
+                <!-- Enforcer -->
+                <div class="bg-gray-700 p-4 rounded-lg shadow-md">
+                    <img src="empty.jpg" alt="Punisher"
+                        class="w-24 h-24 mx-auto rounded-full border-4 border-blue-500 mb-3 cursor-pointer hover:scale-110 transition duration-300"
+                        onclick="openModal(this.src)">
+                    <h3 class="text-lg font-semibold text-blue-400">Empty</h3>
+                    <p class="text-gray-300 text-sm">Punisher</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- IC Rules Dropdown -->
+        <section id="rules" class="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
+            <h2 class="text-2xl font-bold text-white-400 cursor-pointer flex justify-between items-center" onclick="toggleDropdown('ic-rules')">
+                🚧 IC RULES 🚧
+                <svg id="ic-icon" class="w-6 h-6 text-white-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path id="ic-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"></path>
+                </svg>
+            </h2>
+            <div id="ic-rules" class="dropdown-content hidden mt-4">
+                <p class="text-gray-300 mb-4">
+                    Aturan ini berlaku dalam kehidupan geng secara in-character (IC). Tidak mematuhinya berarti mengkhianati
+                    USB (Penurunan pangkat atau kami habisi).
+                </p>
+                <ul class="list-disc list-inside mt-4">
+                    <li class="border-b border-gray-600 pb-2 mb-2">
+                        <span class="text-red-500 font-semibold">Loyalty or Death:</span> Kamu setia, atau kamu menghilang.
+                        Brotherhood ini bukan tempat bagi orang yang suka bermain di dua sisi. Sekali kamu berkhianat, kamu
+                        akan menjadi target. Jangan pernah mencoba mengkhianati atau membocorkan rahasia kepada orang
+                        luar—terutama kepada polisi.
+                    </li>
+                    <li class="border-b border-gray-600 pb-2 mb-2">
+                        <span class="text-red-500 font-semibold">Respect the Chain of Command:</span> Di sini ada hierarki.
+                        Patriarch memimpin segalanya, Paragon adalah eksekutor utama, Punisher adalah tangan kanan yang
+                        menegakkan aturan, Pact adalah ujung tombak, dan Pledge adalah calon anggota yang harus membuktikan
+                        loyalitasnya. Ikuti perintah tanpa perdebatan.
+                    </li>
+                    <li class="border-b border-gray-600 pb-2 mb-2">
+                        <span class="text-red-500 font-semibold">Brotherhood Before Everything:</span> Kamu boleh memiliki
+                        urusan pribadi, tetapi USB tetap menjadi prioritas utama. Jangan pernah mengabaikan saudara sendiri
+                        demi kepentingan orang luar. Di sini, kita hidup bersama dan mati bersama.
+                    </li>
+                    <li class="border-b border-gray-600 pb-2 mb-2">
+                        <span class="text-red-500 font-semibold">No Snitching, No Leaking:</span> Rahasiakan semuanya. Apa
+                        pun yang kamu dengar, lihat, atau ketahui harus tetap berada di dalam keluarga ini. Sekali kamu
+                        membuka mulut kepada orang luar, kamu bukan lagi bagian dari USB—dan semua orang tahu apa
+                        konsekuensinya.
+                    </li>
+                    <li class="border-b border-gray-600 pb-2 mb-2">
+                        <span class="text-red-500 font-semibold">Never Disrespect the USB Name:</span> Union Street
+                        Brotherhood bukan kumpulan orang sembarangan. Jangan membawa nama USB untuk hal-hal sepele, jangan
+                        membuat kami terlihat lemah, dan jangan biarkan orang luar merendahkan kami.
+                    </li>
+                    <li class="border-b border-gray-600 pb-2 mb-2">
+                        <span class="text-red-500 font-semibold">If You Start a War, You Finish It:</span> Jangan memulai
+                        masalah jika kamu tidak siap menghadapi akibatnya. Jika kamu memicu konflik, kamu harus siap
+                        bertanggung jawab. USB tidak mundur dari pertempuran, tetapi kami juga tidak bodoh. Jika perang
+                        terjadi, kami akan bermain dengan strategi, bukan hanya sekadar nekat.
+                    </li>
+                    <li class="border-b border-gray-600 pb-2 mb-2">
+                        <span class="text-red-500 font-semibold">Handle Business Like a Professional:</span> Kami bukan
+                        gangster sembarangan yang hanya membuat onar tanpa tujuan. Kami memiliki bisnis, aliran uang, dan
+                        aturan yang harus diikuti dengan profesionalisme. Jangan bertindak sembrono yang dapat menarik
+                        perhatian polisi lebih dari yang seharusnya.
+                    </li>
+                    <li class="border-b border-gray-600 pb-2 mb-2">
+                        <span class="text-red-500 font-semibold">No Killing Without a Reason:</span> Darah tidak boleh
+                        tumpah tanpa alasan. Jika kamu membunuh seseorang, pastikan ada alasan yang jelas. Tidak ada tempat
+                        bagi mereka yang suka mencari masalah tanpa tujuan.
+                    </li>
+                    <li class="border-b border-gray-600 pb-2 mb-2">
+                        <span class="text-red-500 font-semibold">Respect the Streets:</span> Jalanan adalah rumah kita.
+                        Jangan membuat wilayah kita sendiri menjadi kacau. Jika kamu bertindak sembrono di wilayah kita,
+                        berarti kamu tidak menghormati rumah sendiri.
+                    </li>
+                    <li>
+                        <span class="text-red-500 font-semibold">Fear is a Tool, Not a Weakness:</span> Takut adalah hal
+                        yang wajar, tetapi kamu harus tahu bagaimana menggunakannya untuk bertahan hidup. Jangan pernah
+                        menunjukkan kelemahan kepada musuh, tetapi juga jangan bertindak seolah-olah kamu kebal peluru.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- OOC Rules Dropdown -->
+        <section id="ooc-rules" class="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
+            <h2 class="text-2xl font-bold text-white-400 cursor-pointer flex justify-between items-center" onclick="toggleDropdown('ooc-rules-content')">
+                ⚠️ OOC RULES ⚠️
+                <svg id="ooc-icon" class="w-6 h-6 text-white-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path id="ooc-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"></path>
+                </svg>
+            </h2>
+            <div id="ooc-rules-content" class="dropdown-content hidden mt-4">
+                <p class="text-gray-300 mb-4">
+                    Aturan ini berlaku untuk pemain di luar karakter (out-of-character/OOC). Melanggar aturan ini dapat
+                    berakibat pada sanksi dari server ataupun keluarga.
+                </p>
+                <ul class="list-disc list-inside mt-4">
+                    <li class="border-b border-gray-600 pb-2 mb-2">
+                        <span class="text-blue-400 font-semibold">No Metagaming (MG):</span> Jangan membawa informasi dari
+                        luar RP ke dalam game. Kamu tidak bisa mengetahui nama seseorang hanya karena melihatnya di atas
+                        kepala mereka.
+                    </li>
+                    <li class="border-b border-gray-600 pb-2 mb-2">
+                        <span class="text-blue-400 font-semibold">No Powergaming (PG):</span> Jangan melakukan aksi yang
+                        tidak realistis atau tidak mungkin dilakukan di dunia nyata. Kamu bukan superhero. Jangan melakukan
+                        hal-hal yang tidak masuk akal hanya untuk terlihat kuat.
+                    </li>
+                    <li class="border-b border-gray-600 pb-2 mb-2">
+                        <span class="text-blue-400 font-semibold">No Deathmatching (DM):</span> Jangan menyerang atau
+                        membunuh seseorang tanpa alasan IC yang valid. Kami bukan geng yang hanya bisa membuat kekacauan
+                        tanpa alasan.
+                    </li>
+                    <li class="border-b border-gray-600 pb-2 mb-2">
+                        <span class="text-blue-400 font-semibold">No Revenge Killing (RK):</span> Jika kamu mati, kamu mati.
+                        Jangan langsung mencari pembalasan seolah-olah kamu masih mengingat semua kejadian sebelumnya.
+                    </li>
+                    <li class="border-b border-gray-600 pb-2 mb-2">
+                        <span class="text-blue-400 font-semibold">Respect the Roleplay:</span> Jangan merusak suasana RP
+                        dengan trolling atau tidak serius dalam beroleplay.
+                    </li>
+                    <li class="border-b border-gray-600 pb-2 mb-2">
+                        <span class="text-blue-400 font-semibold">No Breaking Server Rules:</span> Semua anggota harus
+                        mematuhi aturan server GTA SAMP dan server JGRP. Jika kamu ketahuan melanggar, USB tidak akan
+                        membelamu.
+                    </li>
+                    <li>
+                        <span class="text-blue-400 font-semibold">No OOC Drama or Toxicity:</span> Simpan pendapat pribadi
+                        untuk dirimu sendiri. Jika ada masalah, selesaikan dengan cara yang dewasa, jangan membuat keributan
+                        yang tidak perlu.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="gallery" class="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
+            <h2 class="text-2xl font-bold text-white-400 cursor-pointer flex justify-between items-center" onclick="toggleDropdown('gallery-content')">
+                📸 GALLERY 📸
+                <svg id="gallery-icon" class="w-6 h-6 text-white-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path id="gallery-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"></path>
+                </svg>
+            </h2>
+            <div id="gallery-content" class="dropdown-content hidden mt-4">
+                <p class="text-gray-300 mb-4">Di sini kamu bisa melihat foto-foto kenangan USB, momen-momen yang tidak akan
+                    terlupakan dalam sejarah perjalanan keluarga ini.</p>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 gallery">
+                    <img src="backgroundusb.png" alt="Memory 1"
+                        class="w-full aspect-video object-cover rounded-lg bg-gray-700 cursor-pointer"
+                        onclick="openModal(this.src)">
+                    <img src="backgroundusb2.png" alt="Memory 2"
+                        class="w-full aspect-video object-cover rounded-lg bg-gray-700 cursor-pointer"
+                        onclick="openModal(this.src)">
+                    <img src="backgroundusb3.png" alt="Memory 3"
+                        class="w-full aspect-video object-cover rounded-lg bg-gray-700 cursor-pointer"
+                        onclick="openModal(this.src)">
+                    <img src="backgroundusb4.png" alt="Memory 4"
+                        class="w-full aspect-video object-cover rounded-lg bg-gray-700 cursor-pointer"
+                        onclick="openModal(this.src)">
+                    <img src="backgroundusb5.png" alt="Memory 5"
+                        class="w-full aspect-video object-cover rounded-lg bg-gray-700 cursor-pointer"
+                        onclick="openModal(this.src)">
+                    <img src="backgroundusb6.png" alt="Memory 6"
+                        class="w-full aspect-video object-cover rounded-lg bg-gray-700 cursor-pointer"
+                        onclick="openModal(this.src)">
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .gallery img {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .gallery img:hover {
+                transform: scale(1.05);
+                box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            }
+
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                justify-content: center;
+                align-items: center;
+            }
+
+            .modal img {
+                max-width: 90%;
+                max-height: 80%;
+                border-radius: 8px;
+            }
+        </style>
+
+        <!-- Modal Gambar Kenangan -->
+        <div id="imageModal" class="modal flex">
+            <img id="modalImage" src="" alt="Expanded Image">
+        </div>
+
+        <script>
+            function openModal(src) {
+                document.getElementById('modalImage').src = src;
+                document.getElementById('imageModal').style.display = 'flex';
+            }
+            document.getElementById('imageModal').addEventListener('click', function () {
+                this.style.display = 'none';
+            });
+
+            // Toggle mobile menu
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            hamburger.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Toggle dropdown
+            function toggleDropdown(id) {
+                const dropdown = document.getElementById(id);
+                dropdown.classList.toggle('hidden');
+                dropdown.classList.toggle('show');
+            }
+        </script>
+
+        <footer class="text-center text-gray-400 text-sm mt-6">&copy; 2025 Union Street Brotherhood. Blood and Loyalty.
+        </footer>
+    </div>
+</body>
+
+</html>
